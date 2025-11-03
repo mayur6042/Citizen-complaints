@@ -1,0 +1,125 @@
+/* ===== LOGIN PAGE CONTAINER ===== */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+  font-family: "Inter", "Poppins", sans-serif;
+  padding: 24px;
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 14px;
+  padding: 36px 30px;
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.12);
+  color: #0f172a;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.login-card:focus-within,
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.16);
+}
+
+/* ===== TITLE ===== */
+.login-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #073b4c;
+  margin-bottom: 18px;
+}
+
+/* ===== FORM FIELDS ===== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-field {
+  margin-bottom: 14px;
+}
+
+/* Material-UI overrides (scoped) */
+.login-card .MuiOutlinedInput-root {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.login-card .MuiInputLabel-root {
+  color: rgba(7, 59, 76, 0.8);
+}
+
+.login-card .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(7, 59, 76, 0.12);
+}
+
+/* Focus state */
+.login-card .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #00a8cc;
+  box-shadow: 0 6px 18px rgba(0, 168, 204, 0.08);
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.login-button {
+  margin-top: 4px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #0087b2 0%, #00bcd4 100%);
+  color: #fff;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: 0 8px 28px rgba(0, 188, 212, 0.16);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  border: none;
+}
+
+.login-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 188, 212, 0.22);
+}
+
+/* ===== LINKS ===== */
+.login-links {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.login-link {
+  color: #007a8a;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  color: #004b56;
+  text-decoration: underline;
+}
+
+/* ===== ALERT STYLING ===== */
+.MuiAlert-root {
+  background-color: #fff3 !important;
+  color: #073b4c !important;
+  border-radius: 8px !important;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 520px) {
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .login-title {
+    font-size: 1.25rem;
+  }
+}

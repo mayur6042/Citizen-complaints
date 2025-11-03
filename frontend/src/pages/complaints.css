@@ -1,0 +1,154 @@
+/* ===== MAIN CONTAINER ===== */
+.complaint-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+/* ===== CARD ===== */
+.complaint-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 560px;
+  padding: 45px 45px 55px 45px;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.35s ease-in-out;
+  animation: slideFade 0.8s ease;
+}
+
+.complaint-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== TITLE ===== */
+.complaint-card h5,
+.complaint-card .MuiTypography-h5 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #1565c0;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== TEXTFIELDS ===== */
+.MuiTextField-root {
+  margin-bottom: 18px !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 10px !important;
+  background-color: rgba(255, 255, 255, 0.85);
+  transition: all 0.3s ease;
+}
+
+.MuiOutlinedInput-root:hover fieldset {
+  border-color: #1976d2 !important;
+  box-shadow: 0 0 4px rgba(25, 118, 210, 0.4);
+}
+
+.MuiInputLabel-root {
+  color: #424242 !important;
+  font-weight: 500;
+}
+
+.MuiOutlinedInput-input {
+  color: #212121;
+  font-size: 0.95rem;
+}
+
+/* ===== FILE UPLOAD BUTTON ===== */
+.MuiButton-outlined {
+  border-color: #1976d2 !important;
+  color: #1976d2 !important;
+  font-weight: 600;
+  border-radius: 10px;
+  text-transform: none;
+  padding: 10px;
+  transition: all 0.25s ease;
+}
+
+.MuiButton-outlined:hover {
+  background: linear-gradient(90deg, #1976d2, #42a5f5) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* ===== SELECTED FILE NAME ===== */
+.selected-file {
+  font-size: 0.9rem;
+  margin-top: 8px;
+  font-style: italic;
+  color: #424242;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.MuiButton-contained {
+  background: linear-gradient(90deg, #1565c0, #42a5f5) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px 0;
+  text-transform: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(21, 101, 192, 0.3);
+}
+
+.MuiButton-contained:hover {
+  background: linear-gradient(90deg, #42a5f5, #1565c0) !important;
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(21, 101, 192, 0.4);
+}
+
+/* ===== ALERT BOX ===== */
+.MuiAlert-root {
+  border-radius: 10px !important;
+  font-weight: 500;
+  backdrop-filter: blur(6px);
+}
+
+/* ===== HEADER (Welcome + Logout) ===== */
+.complaint-container .MuiTypography-subtitle1 {
+  font-weight: 600;
+  color: #0d47a1;
+}
+
+.complaint-container button {
+  text-transform: none;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 6px 14px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .complaint-card {
+    padding: 30px 25px;
+    border-radius: 14px;
+  }
+
+  .complaint-card h5 {
+    font-size: 1.6rem;
+  }
+}

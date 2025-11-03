@@ -1,0 +1,123 @@
+/* ===== Register Page Background ===== */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== Register Card ===== */
+.register-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  animation: fadeIn 0.7s ease;
+}
+
+/* ===== Title ===== */
+.register-title {
+  text-align: center;
+  color: #6a11cb;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+}
+
+/* ===== Inputs ===== */
+.register-card .MuiTextField-root {
+  margin-bottom: 16px !important;
+}
+
+.register-card .MuiOutlinedInput-root {
+  border-radius: 10px;
+}
+
+.register-card .MuiOutlinedInput-root fieldset {
+  border-color: #d1c4e9 !important;
+}
+
+.register-card .MuiOutlinedInput-root:hover fieldset {
+  border-color: #6a11cb !important;
+}
+
+.register-card .MuiInputLabel-root {
+  color: #6a11cb !important;
+}
+
+/* ===== Checkbox ===== */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ===== Button ===== */
+.register-card button {
+  margin-top: 10px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 10px 0;
+  text-transform: none;
+  box-shadow: 0 4px 10px rgba(106, 17, 203, 0.3);
+  transition: all 0.3s ease;
+}
+
+.register-card button:hover {
+  background: linear-gradient(90deg, #2575fc, #6a11cb);
+  box-shadow: 0 6px 15px rgba(106, 17, 203, 0.4);
+  transform: scale(1.02);
+}
+
+/* ===== Link ===== */
+.link-signin {
+  color: #6a11cb;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-signin:hover {
+  color: #2575fc;
+  text-decoration: underline;
+}
+
+/* ===== Alerts ===== */
+.MuiAlert-root {
+  background-color: #ede7f6 !important;
+  color: #4a148c !important;
+  border-radius: 8px !important;
+}
+
+/* ===== Animation ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 500px) {
+  .register-card {
+    padding: 30px 25px;
+  }
+
+  .register-title {
+    font-size: 1.6rem;
+  }
+}
