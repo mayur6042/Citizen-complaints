@@ -29,20 +29,24 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(200).json({ registered: false }); // user not found
+      return res.status(200).json({ registered: false });
     }
 
-    const isMatch = await bcrypt.compare(password, user.password); // assuming passwords are hashed
+    const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({ error: "Incorrect password" });
     }
 
-    // user exists and password is correct
-    res.status(200).json({ registered: true, token: "dummy-token" }); // you can add JWT token here
+    // SUCCESS ➜ send fullname because frontend needs it
+    res.status(200).json({
+      registered: true,
+      fullname: user.fullname,
+      email: user.email,
+      token: "dummy-token"
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Server error" });
   }
 });
-
 module.exports = router;

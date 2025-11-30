@@ -18,11 +18,17 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // -------------------------------
+  // Handle form input change
+  // -------------------------------
   const handleChange = (e) => {
-    setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     setError("");
   };
 
+  // -------------------------------
+  // Handle login submission
+  // -------------------------------
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
@@ -38,25 +44,32 @@ const Login = () => {
       const data = await response.json();
 
       if (response.ok && data.registered) {
+        // ✅ Successful login
         localStorage.setItem("citizen_token", "true");
         localStorage.setItem("citizen_email", form.email);
+        localStorage.setItem("citizen_name", data.fullname);
         navigate("/complaint", { replace: true });
       } else if (response.ok && !data.registered) {
-        setError("You are not registered. Please register first.");
+        // 🚨 Unregistered user — show message, then redirect
+        setError("You are not registered. Redirecting to registration page...");
+        setTimeout(() => navigate("/register", { replace: true }), 200);
       } else {
         setError(data.error || "Invalid email or password");
       }
     } catch (err) {
-      console.error(err);
+      console.error("❌ Login error:", err);
       setError("Server error. Try again later.");
     } finally {
       setLoading(false);
     }
   };
 
+  // -------------------------------
+  // Render UI
+  // -------------------------------
   return (
     <Box className="login-container">
-      <Paper elevation={0} className="login-card" role="main" aria-label="login form">
+      <Paper elevation={0} className="login-card" role="main" aria-label="Login form">
         <Typography className="login-title">Public Service Complaint</Typography>
 
         {error && (
@@ -102,6 +115,7 @@ const Login = () => {
           </Button>
         </Box>
 
+        {/* Links Section */}
         <Box className="login-links">
           <Typography variant="body2">
             <MuiLink
@@ -110,6 +124,16 @@ const Login = () => {
               className="login-link"
             >
               🔍 Track your complaint
+            </MuiLink>
+          </Typography>
+
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            <MuiLink
+              component="button"
+              onClick={() => navigate("/authority-login")}
+              className="login-link"
+            >
+              🏛️ Authority Login
             </MuiLink>
           </Typography>
 

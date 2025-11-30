@@ -1,0 +1,23 @@
+.auth-login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #90caf9, #e3f2fd);
+  font-family: "Poppins", sans-serif;
+}
+
+.auth-login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.auth-login-title {
+  text-align: center;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 20px;
+}

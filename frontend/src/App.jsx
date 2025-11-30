@@ -8,12 +8,14 @@ import Complaint from "./pages/Complaints";
 import Login from "./pages/Login";
 import TrackComplaint from "./pages/TrackComplaint";
 import RegisterForm from "./pages/RegisterForm";
-import Feedback from "./pages/FeedbackPage"; // ✅ import the feedback page
+import Feedback from "./pages/FeedbackPage"; 
+import AuthorityLogin from "./pages/AuthorityLogin";
+import AuthorityDashboard from "./pages/AuthorityDashboard";
 
 const App = () => (
   <Router>
     <Routes>
-      {/* Redirect root to registration */}
+      {/* Default route */}
       <Route path="/" element={<Navigate to="/register" replace />} />
 
       {/* Public routes */}
@@ -23,13 +25,17 @@ const App = () => (
       <Route path="/track" element={<TrackComplaint />} />
 
       {/* Feedback route */}
-      <Route path="/feedback/:complaintId" element={<Feedback />} /> {/* ✅ Correct route */}
+      <Route path="/feedback/:complaintId" element={<Feedback />} />
 
       {/* Admin routes */}
       <Route path="/admin-login" element={<AdminLogin />} />
       <Route path="/admin-dashboard" element={<AdminDashboard />} />
 
-      {/* Catch-all route: redirect unknown paths to register */}
+      {/* Authority routes */}
+      <Route path="/authority-login" element={<AuthorityLogin />} />
+      <Route path="/authority-dashboard" element={<AuthorityDashboard />} />
+
+      {/* Fallback route */}
       <Route path="*" element={<Navigate to="/register" replace />} />
     </Routes>
   </Router>

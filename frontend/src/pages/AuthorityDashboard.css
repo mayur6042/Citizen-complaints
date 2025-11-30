@@ -1,0 +1,185 @@
+/* ===== MAIN CONTAINER ===== */
+.authority-dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  padding: 60px 50px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== HEADER ===== */
+.authority-header {
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 18px 30px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.7s ease;
+}
+
+.authority-header h5 {
+  font-size: 1.8rem;
+  color: #0d47a1;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* ===== FILTER BAR ===== */
+.authority-filters {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.authority-filters .MuiTextField-root,
+.authority-filters .MuiSelect-root {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== TABLE ===== */
+.authority-table {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 14px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12) !important;
+  overflow: hidden;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* ===== TABLE HEAD ===== */
+.MuiTableHead-root {
+  background: #1565c0 !important;
+}
+
+.MuiTableHead-root .MuiTableCell-root {
+  color: #fff !important;
+  font-weight: 600 !important;
+  font-size: 15px;
+}
+
+/* ===== TABLE BODY ===== */
+.MuiTableBody-root .MuiTableRow-root {
+  transition: background 0.25s ease;
+}
+
+.MuiTableBody-root .MuiTableRow-root:hover {
+  background-color: #e3f2fd !important;
+}
+
+.MuiTableCell-root {
+  font-size: 14px !important;
+  color: #333 !important;
+  padding: 12px 16px !important;
+}
+
+/* ===== STATUS COLORS ===== */
+.status-resolved {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+.status-inprogress {
+  color: #f57f17;
+  font-weight: 700;
+}
+
+.status-registered {
+  color: #1976d2;
+  font-weight: 700;
+}
+
+/* ===== BUTTONS ===== */
+.authority-header button {
+  background-color: #6ed32f;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 8px 20px;
+  text-transform: none;
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+  transition: all 0.3s ease;
+}
+
+.authority-header button:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* ===== FEEDBACK TEXT ===== */
+.feedback-text {
+  font-size: 13px;
+  color: #ebf1ec;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .authority-dashboard {
+    padding: 30px 20px;
+  }
+
+  .authority-header h5 {
+    font-size: 1.6rem;
+  }
+
+  .authority-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 600px) {
+  .authority-header h5 {
+    font-size: 1.4rem;
+  }
+
+  .authority-header {
+    padding: 14px 20px;
+  }
+
+  .authority-table {
+    font-size: 12px;
+  }
+
+  .MuiTableCell-root {
+    padding: 8px !important;
+  }
+}

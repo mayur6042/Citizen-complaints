@@ -13,7 +13,7 @@ const generateSequentialId = async () => {
   if (!lastComplaint) return "001"; // first complaint
 
   // Parse the numeric ID and increment
-  const lastIdNum = parseInt(lastComplaint.complaintId, 10);
+  const lastIdNum = parseInt(lastComplaint.complaintId, 2);
   const nextId = (lastIdNum + 1).toString().padStart(3, "0");
 
   return nextId;
