@@ -59,13 +59,13 @@ const transporter = nodemailer.createTransport({
 
 // Department Emails
 const departmentEmails = {
-  "Water Supply": "vigneshmpai2005@gmail.com",
-  Electricity: "vigneshmpai2005@gmail.com",
-  Sanitation: "vigneshmpai2005@gmail.com",
-  "Road Maintenance": "mayurshenoy02@gmail.com",
-  "Public Transport": "vigneshmpai2005@gmail.com",
-  "Health Services": "vigneshmpai2005@gmail.com",
-  Other: "vigneshmpai2005@gmail.com",
+  "Water Supply": "dummy@email.com",
+  Electricity: "dummy@email.com",
+  Sanitation: "dummy@email.com",
+  "Road Maintenance": "dummy@email.com",
+  "Public Transport": "dummy@email.com",
+  "Health Services": "dummy@email.com",
+  Other: "dummy@email.com",
 };
 
 // ---------------------------
