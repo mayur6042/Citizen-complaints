@@ -70,7 +70,7 @@ const Login = () => {
   return (
     <Box className="login-container">
       <Paper elevation={0} className="login-card" role="main" aria-label="Login form">
-        <Typography className="login-title">Public Service Complaint</Typography>
+        <Typography className="login-title">Public Service Complaint Management System</Typography>
 
         {error && (
           <Alert severity="error" sx={{ mb: 2 }}>
